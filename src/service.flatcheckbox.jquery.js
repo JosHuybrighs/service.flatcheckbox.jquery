@@ -61,10 +61,10 @@
                 self._checked = !self._checked;
                 $(self.element).prop('checked', self._checked);
                 if (self._checked) {
-                    self.settings.onChecked();
+                    self.settings.onChecked(self.element);
                 }
                 else {
-                    self.settings.onUnChecked();
+                    self.settings.onUnChecked(self.element);
                 }
             });
         }
