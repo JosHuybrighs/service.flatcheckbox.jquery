@@ -1,0 +1,26 @@
+﻿.flcheckbox {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 1.0em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.flcheckbox .ckbBox {
+	display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #b4b4b4;
+  margin-right: 5px;
+}
+.flcheckbox .ckbBox:hover {
+  border: 2px solid #808080;
+}
+.flcheckbox.flchecked .ckbBox {
+  background: url(checkbox-checked.png) left top no-repeat;
+}
+.flcheckbox .ckbText {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3px;
+}
+
