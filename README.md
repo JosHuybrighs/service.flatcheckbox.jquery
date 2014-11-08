@@ -1,4 +1,4 @@
-##service.flatcheckbox.jquery
+##service.flatcheckbox.jquery - Styleable checkbox
 
 ###Description
 
