@@ -1,5 +1,8 @@
 /****************************************************************************************************** 
  * A jquery plugin implementing a checkbox. 
+ *
+ * Version: 1.0.1
+ *
  * Usage:
  *  - Element:
  *      <input id="myCheckbox" type="checkbox" @( (Model.ShowPassedActivities != 0) ? "checked" : "") />
@@ -16,7 +19,10 @@
  *                                    onUnChecked: function ( { ... }
  *      });
  *
- * version 1.0.0
+ * Change history:
+ *
+ * Version 1.0.1 - Added method to change the label
+ * Version 1.0.0 - First version.
  *
  * @requires jQuery 1.8.0 or later
  *
@@ -67,6 +73,14 @@
                     self.settings.onUnChecked(self.element);
                 }
             });
+        },
+
+        // label
+        // Arguments:
+        // - argsArray: An array where the first element is a string. It holds the new label text.
+        label: function (argsArray) {
+            var labelEl = $(this.element).next().find('.ckbText');
+            labelEl.text(argsArray[0]);
         }
 
     };
