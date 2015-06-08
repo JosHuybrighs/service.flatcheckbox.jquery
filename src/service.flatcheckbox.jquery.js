@@ -35,6 +35,7 @@
  ******************************************************************************************************/
 ; (function ($, window, document, undefined) {
 
+    var version = '1.0.1';
     var pluginName = "flatcheckbox";
     var defaults = {
         label: "",
