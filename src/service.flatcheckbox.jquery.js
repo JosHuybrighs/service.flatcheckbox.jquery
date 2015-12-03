@@ -1,12 +1,11 @@
 /****************************************************************************************************** 
  * A jquery plugin implementing a checkbox. 
  *
- * Version: 1.0.1
+ * Version: 1.0.2
  *
  * Usage:
  *  - Element:
  *      <input id="myCheckbox" type="checkbox" @( (Model.ShowPassedActivities != 0) ? "checked" : "") />
-
  *      
  *  - Instantiation:
  *    1. With a label behind the checkbox
@@ -21,6 +20,7 @@
  *
  * Change history:
  *
+ * Version 1.0.2 - Added method to uncheck the checkbox
  * Version 1.0.1 - Added method to change the label
  * Version 1.0.0 - First version.
  *
@@ -35,7 +35,7 @@
  ******************************************************************************************************/
 ; (function ($, window, document, undefined) {
 
-    var version = '1.0.1';
+    var version = '1.0.2';
     var pluginName = "flatcheckbox";
     var defaults = {
         label: "",
@@ -82,6 +82,16 @@
         label: function (argsArray) {
             var labelEl = $(this.element).next().find('.ckbText');
             labelEl.text(argsArray[0]);
+        },
+
+        // uncheck
+        // Arguments: None
+        uncheck: function (argsArray) {
+            var $flchkbox = $(this.element).next();
+            $flchkbox.removeClass('flchecked');
+            this._checked = false;
+            $(this.element).prop('checked', false);
+            this.settings.onUnChecked(this.element);
         }
 
     };
